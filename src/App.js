@@ -11,7 +11,9 @@ class App extends Component{
   }
 
   handleGamePlay = (index) => {
-    alert(index)
+    const { board } = this.state
+    board[index] = "🌴"
+    this.setState({board: board})
   }
 
   render(){
@@ -19,7 +21,7 @@ class App extends Component{
       <>
         <h1>Treasure Hunt Game</h1>
         <div className="gameboard">
-        {this.state.board.map((value, index) => {
+          {this.state.board.map((value, index) => {
           return (
             <Square
               value={value}
